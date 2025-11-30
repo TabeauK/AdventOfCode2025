@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Runner/Runner.fsproj" />
+  <Project Path="Solutions/Solutions.fsproj" />
+  <Project Path="Tests/Tests.fsproj" />
+</Solution>

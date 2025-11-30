@@ -1,0 +1,43 @@
+﻿<Project Sdk="MSTest.Sdk/4.0.1">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseVSTest>true</UseVSTest>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <Compile Include="MSTestSettings.fs" />
+	  <Compile Include="TestDay12.fs" />
+	  <Compile Include="TestDay11.fs" />
+	  <Compile Include="TestDay10.fs" />
+	  <Compile Include="TestDay9.fs" />
+	  <Compile Include="TestDay8.fs" />
+	  <Compile Include="TestDay7.fs" />
+	  <Compile Include="TestDay6.fs" />
+	  <Compile Include="TestDay5.fs" />
+	  <Compile Include="TestDay4.fs" />
+	  <Compile Include="TestDay3.fs" />
+	  <Compile Include="TestDay2.fs" />
+	  <Compile Include="TestDay1.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Solutions\Solutions.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="MSTest.TestAdapter" Version="4.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="MSTest.TestFramework" Version="4.0.2" />
+  </ItemGroup>
+
+</Project>
