@@ -3,18 +3,17 @@ open Solutions
 open System.Diagnostics
 open System.IO
 
-let start part path = 
+let start part path =
     let stopWatch = Stopwatch.StartNew()
     let content = $"inputs/{path}.txt" |> File.ReadLines
     printfn "Starting execution of %s part %s" path part
     content, stopWatch
 
-let solve solver (content, stopWatch) =
-    (solver content), stopWatch
+let solve solver (content, stopWatch) = (solver content), stopWatch
 
-let finish (output, stopWatch: Stopwatch)  =
-    printfn "The solution was calculated in %s" (stopWatch.Elapsed.ToString())
+let finish (output, stopWatch: Stopwatch) =
     printfn "The result is: %A" output
+    printfn "The solution was calculated in %s" (stopWatch.Elapsed.ToString())
 
 
 let bigSeparator () =
@@ -26,8 +25,10 @@ let smallSeparator () =
     printfn "--------------------------------------"
 
 [<EntryPoint>]
-let main(argv) =
-    let stopWatch: System.Diagnostics.Stopwatch = System.Diagnostics.Stopwatch.StartNew()
+let main (argv) =
+    let stopWatch: System.Diagnostics.Stopwatch =
+        System.Diagnostics.Stopwatch.StartNew()
+
     printfn "Starting execution of Advent Of Code 2025"
     printfn "-----------------------------------------------------------------"
     printfn ""
