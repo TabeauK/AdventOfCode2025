@@ -4,28 +4,35 @@ open Solutions
 open Microsoft.VisualStudio.TestTools.UnitTesting
 
 [<TestClass>]
-type TestDay2 () =
+type TestDay2() =
 
-    
-    let testInput = 
-       """
-       1
-       """
+    let testInput =
+        "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,1698522-1698528,446443-446449,38593856-38593862,565653-565659,824824821-824824827,2121212118-2121212124"
 
     [<TestMethod>]
-    member this.TestDay2A () =
-        let inn = seq<string> (testInput.Split '\n')
-        let input = inn |> Seq.filter (fun (s) -> s.Trim() <> "")
+    member this.TestRangesLength() =
+        let input = "1-2,3-4,5-6"
 
-        let out = Day2.solveA input |> Seq.head
+        let out = input |> Day2.ParseRanges
 
-        Assert.AreEqual("1", out)
+        Assert.AreEqual(3, List.length out)
 
     [<TestMethod>]
-    member this.TestDay2B () =
-        let inn = seq<string> (testInput.Split '\n')
-        let input = inn |> Seq.filter (fun (s:string) -> s.Trim() <> "")
+    member this.TestRangesLength2() =
+        let input = "1000000-100000000000"
 
-        let out = Day2.solveB input |> Seq.head
+        let out = input |> Day2.ParseRanges |> List.head
 
-        Assert.AreEqual("1", out)
+        Assert.AreEqual(6, List.length out)
+
+    [<TestMethod>]
+    member this.TestDay2A() =
+        let out = seq [ testInput ] |> Day2.solveA |> Seq.head
+
+        Assert.AreEqual("1227775554", out)
+
+    [<TestMethod>]
+    member this.TestDay2B() =
+        let out = seq [ testInput ] |> Day2.solveB |> Seq.head
+
+        Assert.AreEqual("4174379265", out)
