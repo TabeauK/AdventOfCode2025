@@ -5,28 +5,32 @@ open Solutions
 open Microsoft.VisualStudio.TestTools.UnitTesting
 
 [<TestClass>]
-type TestDay4 () =
+type TestDay4() =
 
-    
-    let testInput = 
-       """
+
+    let testInput =
+        """
        1
        """
 
     [<TestMethod>]
-    member this.TestDay4A () =
-        let inn = seq<string> (testInput.Split '\n')
-        let input = inn |> Seq.filter (fun (s) -> s.Trim() <> "")
+    member this.TestDay4A() =
+        let input =
+            testInput.Split '\n'
+            |> Array.toList
+            |> List.filter (fun (s: string) -> s.Trim() <> "")
 
-        let out = Day4.solveA input |> Seq.head
+        let out = Day4.solveA input
 
         Assert.AreEqual("1", out)
 
     [<TestMethod>]
-    member this.TestDay4B () =
-        let inn = seq<string> (testInput.Split '\n')
-        let input = inn |> Seq.filter (fun (s:string) -> s.Trim() <> "")
+    member this.TestDay4B() =
+        let input =
+            testInput.Split '\n'
+            |> Array.toList
+            |> List.filter (fun (s: string) -> s.Trim() <> "")
 
-        let out = Day4.solveB input |> Seq.head
+        let out = Day4.solveB input
 
         Assert.AreEqual("1", out)

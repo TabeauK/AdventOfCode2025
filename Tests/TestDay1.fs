@@ -141,18 +141,22 @@ type TestDay1() =
 
     [<TestMethod>]
     member this.TestDay1A() =
-        let inn = seq<string> (testInput.Split '\n')
-        let input = inn |> Seq.filter (fun (s) -> s.Trim() <> "")
+        let input =
+            testInput.Split '\n'
+            |> Array.toList
+            |> List.filter (fun (s: string) -> s.Trim() <> "")
 
-        let out = Day1.solveA input |> Seq.head
+        let out = Day1.solveA input
 
         Assert.AreEqual("3", out)
 
     [<TestMethod>]
     member this.TestDay1B() =
-        let inn = seq<string> (testInput.Split '\n')
-        let input = inn |> Seq.filter (fun (s: string) -> s.Trim() <> "")
+        let input =
+            testInput.Split '\n'
+            |> Array.toList
+            |> List.filter (fun (s: string) -> s.Trim() <> "")
 
-        let out = Day1.solveB input |> Seq.head
+        let out = Day1.solveB input
 
         Assert.AreEqual("6", out)

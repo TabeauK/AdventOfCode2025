@@ -65,7 +65,6 @@ module Day1 =
             + distance / 100
             + countPastZeroes state.position newPosition direction }
 
-    [<TailCall>]
     let rec runInstructions state (instructions: List<string>) =
         match List.tryHead instructions with
         | None -> state
@@ -77,8 +76,6 @@ module Day1 =
 
     let run = initialState |> runInstructions
 
-    let solveA input =
-        seq { Seq.toList input |> run |> getCounter }
+    let solveA input = input |> run |> getCounter
 
-    let solveB input =
-        seq { Seq.toList input |> run |> getCounterB }
+    let solveB input = input |> run |> getCounterB

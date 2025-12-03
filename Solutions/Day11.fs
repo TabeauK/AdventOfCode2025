@@ -9,7 +9,7 @@ module Day11 =
         | (false, _) -> 0
 
     let solveA input =
-        seq<string> { input |> Seq.map ParseInt |> Seq.sum |> string}
+        input |> List.map ParseInt |> List.sum |> string
 
     let solveB input =
-        seq<string> { input |> Seq.map ParseInt |> Seq.sum |> string}
+        input |> List.map ParseInt |> List.sum |> string

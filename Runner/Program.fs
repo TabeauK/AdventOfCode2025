@@ -7,12 +7,12 @@ let start part path =
     let stopWatch = Stopwatch.StartNew()
     let content = $"inputs/{path}.txt" |> File.ReadLines
     printfn "Starting execution of %s part %s" path part
-    content, stopWatch
+    content |> Seq.toList, stopWatch
 
 let solve solver (content, stopWatch) = (solver content), stopWatch
 
 let finish (output, stopWatch: Stopwatch) =
-    printfn "The result is: %A" output
+    printfn "The result is: %s" output
     printfn "The solution was calculated in %s" (stopWatch.Elapsed.ToString())
 
 

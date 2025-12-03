@@ -139,8 +139,13 @@ module Day2 =
         [ min..max ] |> List.map Replicate |> Set.ofList
 
     let FindPatternsInRange lenghts range =
-        let RangesOfPatterns = range.max |> String.length |> lenghts |> CollectAllRangesOfPatterns
-        range |> RangesOfPatterns |> List.map AllPatterns |> List.fold Set.union Set.empty
+        let RangesOfPatterns =
+            range.max |> String.length |> lenghts |> CollectAllRangesOfPatterns
+
+        range
+        |> RangesOfPatterns
+        |> List.map AllPatterns
+        |> List.fold Set.union Set.empty
 
     let Run lenghts =
         let FindPatternInRange = lenghts |> FindPatternsInRange
@@ -168,8 +173,6 @@ module Day2 =
     let RunB = lengthsForB |> Run
 
     // Solvers
-    let solveA input =
-        seq<string> { input |> Seq.head |> RunA }
+    let solveA input = input |> Seq.head |> RunA
 
-    let solveB input =
-        seq<string> { input |> Seq.head |> RunB }
+    let solveB input = input |> Seq.head |> RunB

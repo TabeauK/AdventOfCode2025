@@ -4,28 +4,34 @@ open Solutions
 open Microsoft.VisualStudio.TestTools.UnitTesting
 
 [<TestClass>]
-type TestDay3 () =
+type TestDay3() =
 
-    
-    let testInput = 
-       """
-       1
-       """
-
-    [<TestMethod>]
-    member this.TestDay3A () =
-        let inn = seq<string> (testInput.Split '\n')
-        let input = inn |> Seq.filter (fun (s) -> s.Trim() <> "")
-
-        let out = Day3.solveA input |> Seq.head
-
-        Assert.AreEqual("1", out)
+    let testInput =
+        """
+        987654321111111
+        811111111111119
+        234234234234278
+        818181911112111
+        """
 
     [<TestMethod>]
-    member this.TestDay3B () =
-        let inn = seq<string> (testInput.Split '\n')
-        let input = inn |> Seq.filter (fun (s:string) -> s.Trim() <> "")
+    member this.TestDay3A() =
+        let input =
+            testInput.Split '\n'
+            |> Array.toList
+            |> List.filter (fun (s: string) -> s.Trim() <> "")
 
-        let out = Day3.solveB input |> Seq.head
+        let out = Day3.solveA input
 
-        Assert.AreEqual("1", out)
+        Assert.AreEqual("357", out)
+
+    [<TestMethod>]
+    member this.TestDay3B() =
+        let input =
+            testInput.Split '\n'
+            |> Array.toList
+            |> List.filter (fun (s: string) -> s.Trim() <> "")
+
+        let out = Day3.solveB input
+
+        Assert.AreEqual("3121910778619", out)

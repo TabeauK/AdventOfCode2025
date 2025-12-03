@@ -27,12 +27,12 @@ type TestDay2() =
 
     [<TestMethod>]
     member this.TestDay2A() =
-        let out = seq [ testInput ] |> Day2.solveA |> Seq.head
+        let out = [ testInput ] |> Day2.solveA
 
         Assert.AreEqual("1227775554", out)
 
     [<TestMethod>]
     member this.TestDay2B() =
-        let out = seq [ testInput ] |> Day2.solveB |> Seq.head
+        let out = [ testInput ] |> Day2.solveB
 
         Assert.AreEqual("4174379265", out)
