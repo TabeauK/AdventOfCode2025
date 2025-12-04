@@ -10,7 +10,16 @@ type TestDay4() =
 
     let testInput =
         """
-       1
+        ..@@.@@@@.
+        @@@.@.@.@@
+        @@@@@.@.@@
+        @.@@@@..@.
+        @@.@@@@.@@
+        .@@@@@@@.@
+        .@.@.@.@@@
+        @.@@@.@@@@
+        .@@@@@@@@.
+        @.@.@@@.@.
        """
 
     [<TestMethod>]
@@ -22,7 +31,7 @@ type TestDay4() =
 
         let out = Day4.solveA input
 
-        Assert.AreEqual("1", out)
+        Assert.AreEqual("13", out)
 
     [<TestMethod>]
     member this.TestDay4B() =
@@ -33,4 +42,4 @@ type TestDay4() =
 
         let out = Day4.solveB input
 
-        Assert.AreEqual("1", out)
+        Assert.AreEqual("43", out)
