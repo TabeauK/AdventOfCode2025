@@ -41,8 +41,9 @@ module Day6 =
             inputs[.. List.length inputs - 2]
             |> List.map addPadding
             |> List.map (fun line ->
-                ([ 0 .. List.length indexesWithEnd - 2 ]
-                 |> List.map (fun i -> line[indexesWithEnd[i] .. indexesWithEnd[i + 1] - 2])))
+                (indexesWithEnd
+                 |> List.pairwise
+                 |> List.map (fun (start, finish) -> line[start .. finish - 2])))
 
         acc, data
 
