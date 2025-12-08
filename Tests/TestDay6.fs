@@ -8,9 +8,10 @@ type TestDay6() =
 
 
     let testInput =
-        """
-       1
-       """
+        """123 328  51 64 
+ 45 64  387 23 
+  6 98  215 314
+*   +   *   +  """
 
     [<TestMethod>]
     member this.TestDay6A() =
@@ -21,7 +22,7 @@ type TestDay6() =
 
         let out = Day6.solveA input
 
-        Assert.AreEqual("1", out)
+        Assert.AreEqual("4277556", out)
 
     [<TestMethod>]
     member this.TestDay6B() =
@@ -32,4 +33,4 @@ type TestDay6() =
 
         let out = Day6.solveB input
 
-        Assert.AreEqual("1", out)
+        Assert.AreEqual("3263827", out)
