@@ -9,7 +9,14 @@ type TestDay9() =
 
     let testInput =
         """
-       1
+7,1
+11,1
+11,7
+9,7
+9,5
+2,5
+2,3
+7,3
        """
 
     [<TestMethod>]
@@ -21,7 +28,7 @@ type TestDay9() =
 
         let out = Day9.solveA input
 
-        Assert.AreEqual("1", out)
+        Assert.AreEqual("50", out)
 
     [<TestMethod>]
     member this.TestDay9B() =
@@ -32,4 +39,4 @@ type TestDay9() =
 
         let out = Day9.solveB input
 
-        Assert.AreEqual("1", out)
+        Assert.AreEqual("24", out) // 1416375744 too low
