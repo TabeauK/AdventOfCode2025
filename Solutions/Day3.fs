@@ -32,8 +32,7 @@ module Day3 =
         let s = input.Trim()
         let first = { index = 0; value = s[0] }
         let second = { index = 1; value = s[1] }
-        let out = Get2Biggest (s[1..].ToCharArray() |> Array.toList) 0 (first, second)
-        out
+        Get2Biggest (s[1..].ToCharArray() |> Array.toList) 0 (first, second)
 
     let FindBiggest12 (s: string) =
         let input = s.Trim()

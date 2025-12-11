@@ -13,7 +13,7 @@ module Day4 =
     let indexes table =
         [ 0 .. List.length table - 1 ]
         |> List.map (fun i -> [ 0 .. String.length table[i] - 1 ] |> List.map (fun j -> (i, j)))
-        |> List.fold List.append List.empty
+        |> List.fold (@) List.empty
 
     let filetrMarkers (input: List<string>) (i, j) =
         match input[i][j] with

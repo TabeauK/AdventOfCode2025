@@ -129,7 +129,7 @@ module Day2 =
     let CollectAllRangesOfPatterns rangeLengths range =
         let Collect = CollectRanges range
 
-        rangeLengths |> List.map Collect |> List.fold List.append List.empty
+        rangeLengths |> List.map Collect |> List.fold (@) List.empty
 
     // Operations on ranges
     let AllPatterns rangeOfPatterns =
@@ -151,10 +151,10 @@ module Day2 =
         let FindPatternInRange = lenghts |> FindPatternsInRange
 
         ParseRanges
-        >> List.fold List.append List.empty
+        >> List.fold (@) List.empty
         >> List.map FindPatternInRange
         >> List.fold Set.union Set.empty
-        >> Set.fold (fun x y -> x + y) Int128.Zero
+        >> Set.fold (+) Int128.Zero
         >> string
 
 
