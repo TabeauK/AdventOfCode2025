@@ -31,7 +31,7 @@ module Day7 =
         |> List.map (fun ((row, column), beams) ->
             { row = row
               column = column
-              possibilities = (beams |> List.fold (fun acc beam -> beam.possibilities + acc) 0) })
+              possibilities = (beams |> List.fold (fun acc beam -> beam.possibilities + acc) Int128.Zero) })
 
     let rec goOneRow splitters (beams: List<beam>) =
         let newRow =
