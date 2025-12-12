@@ -32,8 +32,10 @@ let main (argv) =
     printfn "Starting execution of Advent Of Code 2025"
     printfn "-----------------------------------------------------------------"
     printfn ""
-    //"Day1" |> start "a" |> solve Day1.solveA |> finish |> smallSeparator |> ignore
-    //"Day1" |> start "b" |> solve Day1.solveB |> finish |> bigSeparator |> ignore
+    // Run only in "realese" mode
+    "Day1" |> start "a" |> solve Day1.solveA |> finish |> smallSeparator |> ignore
+    // Run only in "realese" mode
+    "Day1" |> start "b" |> solve Day1.solveB |> finish |> bigSeparator |> ignore
     "Day2" |> start "a" |> solve Day2.solveA |> finish |> smallSeparator |> ignore
     "Day2" |> start "b" |> solve Day2.solveB |> finish |> bigSeparator |> ignore
     "Day3" |> start "a" |> solve Day3.solveA |> finish |> smallSeparator |> ignore
